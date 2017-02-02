@@ -19,6 +19,9 @@ class RegexReader implements ReaderInterface
 
         $orientation = null;
 
+        /*
+         * Thanks to "Eion Robb" via http://php.net/manual/de/function.exif-read-data.php#117355
+         */
         if (preg_match('@\x12\x01\x03\x00\x01\x00\x00\x00(.)\x00\x00\x00@', file_get_contents($image->getPath()), $matches)) {
             switch(ord($matches[1])) {
                 case self::ORIENTATION_0:
