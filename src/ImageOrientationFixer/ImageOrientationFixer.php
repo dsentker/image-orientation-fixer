@@ -2,6 +2,7 @@
 namespace DSentker\ImageOrientationFixer;
 
 use DSentker\ImageOrientationFixer\OrientationReader\ExifReader;
+use DSentker\ImageOrientationFixer\OrientationReader\ReaderFactory;
 use DSentker\ImageOrientationFixer\OrientationReader\ReaderInterface;
 
 class ImageOrientationFixer
@@ -32,9 +33,20 @@ class ImageOrientationFixer
     }
 
     /**
+     * @param $path
+     *
+     * @return bool
+     */
+    public static function fixImage($path)
+    {
+        $fixer = new static($path, ReaderFactory::getReader());
+        return $fixer->fix()->save();
+    }
+
+    /**
      * @return Image
      */
-    public function fix()
+    public function getFixedImage()
     {
         $reader = ($this->reader) ? $this->reader : new ExifReader();
         $imageResource = $this->image->getResource();
