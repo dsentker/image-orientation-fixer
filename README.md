@@ -3,7 +3,7 @@
 Fixes image orientation for uploaded images. 
 
 ## Installation
-```composer require dsentker/imageorientationfixer```
+``` composer require "dsentker/imageorientationfixer:*@dev"```
 
 ## Usage
 
