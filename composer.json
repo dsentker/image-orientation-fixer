@@ -1,0 +1,10 @@
+{
+    "name": "dsentker/imageorientationfixer",
+    "description": "Fixes image orientation for uploaded images",
+    "require": {
+        "php": "^5.4 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {"DSentker\\ImageOrientationFixer\\": "vendor/imageorientationfixer/src"}
+    }
+}
