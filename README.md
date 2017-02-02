@@ -40,7 +40,6 @@ ImageOrientationFixer::fixImage('path/to/image.jpg');
 
 ### Advantage Usage
 ```php
-use DSentker\ImageOrientationFixer\ImageOrientationFixer;
 require_once 'vendor/autoload.php';
 
 $imageFile = 'image.jpeg';
