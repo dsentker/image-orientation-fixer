@@ -40,7 +40,7 @@ class ImageOrientationFixer
     public static function fixImage($path)
     {
         $fixer = new static($path, ReaderFactory::getReader());
-        return $fixer->fix()->save();
+        return $fixer->getFixedImage()->save();
     }
 
     /**
