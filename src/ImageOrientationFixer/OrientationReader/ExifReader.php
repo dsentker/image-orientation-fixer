@@ -21,6 +21,10 @@ class ExifReader implements ReaderInterface
         }
 
         $exif = exif_read_data($image->getPath());
+        if ($exif === false) {
+            throw new ImageOrientationException('Unknown orientation - exif data couldn\'t be parsed');
+        }
+
         $orientation = null;
 
         if(!empty($exif['Orientation'])) {
